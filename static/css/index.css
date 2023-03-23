@@ -71,7 +71,7 @@ body {
 }
 
 .publication-authors a {
-   color: hsl(0, 86%, 53%) !important;
+   color: #E34234 !important;
 }
 
 .publication-authors a:hover {
