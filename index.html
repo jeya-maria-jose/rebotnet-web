@@ -91,7 +91,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title" style="color:orange">ReBotNet:</h1>
+          <h1 class="title is-1 publication-title" style="color:#CC5500">ReBotNet:</h1>
           <h1 class="title is-2 publication-title">Fast Real-time Video Enhancement</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
@@ -99,22 +99,22 @@
             <span class="author-block">
               <a href="https://rahuldotgarg.appspot.com//">Rahul Garg</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="">Andeep Toor</a><sup>1</sup>,
+              <a >Andeep Toor</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="">Xin Tong</a><sup>1</sup>,
+              <a >Xin Tong</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="">Weijuan Xi</a><sup>1</sup>,
+              <a >Weijuan Xi</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="">Andreas Lugmayr</a><sup>2</sup>,
+              <a >Andreas Lugmayr</a><sup>2</sup>,
             </span>
             <span class="author-block">
               <a href="https://scholar.google.com/citations?user=AkEXTbIAAAAJ&hl=en">Vishal M. Patel</a><sup>3</sup>,
             </span>
             <span class="author-block">
-              <a href="">Anne Menini</a><sup>1</sup>
+              <a >Anne Menini</a><sup>1</sup>
             </span>
           </div>
 
@@ -206,24 +206,30 @@
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-new">
           <h1>Animated Image</h1>
-          <img src="./static/images/ts1.gif" alt="" border=2 height=1000 width=650>
+          <img src="./static/images/ts1.gif" alt="">
            </div>
         <div class="item item-new">
           <h1>Animated Image</h1>
-          <img src="./static/images/res4.gif" alt="" border=2 height=1000 width=650>
+          <img src="./static/images/res4.gif">
         </div>
         <div class="item item-new">
           <h1>Animated Image</h1>
-          <img src="./static/images/res3.gif" alt="" border=2 height=1000 width=650>
+          <img src="./static/images/res3.gif" >
         </div>
         <div >
-          <img src="./static/images/port1.gif" class="center" border=2 height=100 width=250>
+          <center>
+          <img src="./static/images/port1.gif" width=250>
+        </center>
         </div>
         <div>
-          <img src="./static/images/port2.gif" class="center" border=2 height=100 width=250>
+          <center>
+          <img src="./static/images/port2.gif"  width=250>
+        </center>
         </div>
         <div>
-          <img src="./static/images/port3.gif" class="center" border=2 height=100 width=250>
+          <center>
+          <img src="./static/images/port3.gif" width=250>
+        </center>
         </div>
         
         
@@ -242,15 +248,181 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present ReBotNet, a fast video architecture which can perform real-time video enhancement focused on live streams and video conferencing applications.
+            We present <a style="color:#CC5500">ReBotNet</a>, a video architecture designed to swiftly enhance live streams and video conferences in real-time.
           </p>
           <p>
-            Most video restoration networks are slow, have high computational load, and can't be used  for real-time  video enhancement. In this work, we design an efficient and fast framework to perform real-time video enhancement for practical use-cases like live video calls and video streams. Our proposed method, called Recurrent Bottleneck Mixer Network (ReBotNet), employs a dual-branch framework. The first branch learns spatio-temporal features by tokenizing the input frames along the spatial and temporal dimensions using a ConvNext-based encoder and  processing these abstract tokens using a bottleneck mixer. To further improve temporal consistency, the second branch employs a mixer directly on tokens extracted from individual frames. A common decoder then merges the features form the two branches to predict the enhanced frame. In addition, we propose a recurrent training approach where the last frame's prediction is leveraged to efficiently enhance the current frame while improving temporal consistency.  To evaluate our method, we curate two new datasets that emulate real-world video call and streaming scenarios, and show extensive results on multiple datasets where ReBotNet outperforms existing approaches with lower computations, reduced memory requirements, and faster inference time.
+            Most video restoration networks are slow, have high computational load, and can't be used  for real-time  video enhancement. In this work, we design an efficient and fast framework to perform real-time video enhancement for practical use-cases like live video calls and video streams. Our proposed method, called <a style="color:#CC5500">Re</a>current <a style="color:#CC5500">Bot</a>tleneck Mixer <a style="color:#CC5500">Net</a>work (<a style="color:#CC5500">ReBotNet</a>), employs a dual-branch framework. The first branch learns spatio-temporal features by tokenizing the input frames along the spatial and temporal dimensions using a ConvNext-based encoder and  processing these abstract tokens using a bottleneck mixer. To further improve temporal consistency, the second branch employs a mixer directly on tokens extracted from individual frames. A common decoder then merges the features form the two branches to predict the enhanced frame. In addition, we propose a recurrent training approach where the last frame's prediction is leveraged to efficiently enhance the current frame while improving temporal consistency.  To evaluate our method, we curate two new datasets that emulate real-world video call and streaming scenarios, and show extensive results on multiple datasets where ReBotNet outperforms existing approaches with lower computations, reduced memory requirements, and faster inference time.
           </p>
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <h5 class="subtitle has-text-centered">
+        Overview of ReBotNet
+      </h2>
+        <center>
+            <img src="./static/images/method_gif.gif" border=0 height=1000 width=1500></img></
+          </center>
+          &nbsp; 
+
+
+ </div>
+ The inputs to the network are the previous frame prediction and the current input frame. These are tokenized in two different ways: Tubelet tokens and image tokens . The tubelet tokens are processed using a Mixer to learn spatio-temporal features while image tokens are processed using a Mixer to learn temporal features. These features are passed through an upsampling decoder to get the output enhanced frame.
+      </div>
+    </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Results</h2>
+        <div class="content has-text-justified">
+          <h5 class="subtitle has-text-centered">
+        Performance Graphs
+      </h2>
+        <center>
+            <img src="./static/images/plots.png" border=0 height=500 width=500></img></
+          </center>
+          &nbsp; 
+
+ </div>
+ <div class="content has-text-justified">
+          <h5 class="subtitle has-text-centered">
+        Comparison with previous methods
+      </h2>
+        <center>
+            <img src="./static/images/teaser.png" border=0 height=500 width=500></img></
+          </center>
+          &nbsp; 
+
+ </div>
+      </div>
+    </div>
+</section>
+
+
+<section class="hero">
+  <div class="hero-body">
+
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">More Results</h2>
+        <div class="content has-text-justified">
+        
+<table border="0" bordercolor="red" align="center">
+<!--     <tr>
+        <th colspan="4">ABCD</th> 
+    </tr> -->
+
+    <tr>
+      <!-- <div class="image-compare">
+                            <img src="./static/images/ts2_input.jpg" alt="" /></img>
+                            <img src="./static/images/ts_har.jpg" alt="" /></img>
+                        </div> -->
+        
+          
+                        <div class="image-compare" style="margin-top: 1em;">
+                            <center>
+          <img src="./static/images/res1.gif"  width=500>
+        </center>
+                        </div>
+
+                       
+          
+
+    </tr>
+ <tr>
+  <tr>
+      <!-- <div class="image-compare">
+                            <img src="./static/images/ts2_input.jpg" alt="" /></img>
+                            <img src="./static/images/ts_har.jpg" alt="" /></img>
+                        </div> -->
+        
+          
+                        <div class="image-compare" style="margin-top: 1em;">
+                            <center>
+          <img src="./static/images/res6.gif"  width=500>
+        </center>
+                        </div>
+
+                       
+          
+
+    </tr>
+     <tr>
+      <!-- <div class="image-compare">
+                            <img src="./static/images/ts2_input.jpg" alt="" /></img>
+                            <img src="./static/images/ts_har.jpg" alt="" /></img>
+                        </div> -->
+        
+          
+                        <div class="image-compare" style="margin-top: 1em;">
+                            <center>
+          <img src="./static/images/res7.gif"  width=500>
+        </center>
+                        </div>
+
+                       
+          
+
+    </tr>
+ <tr>
+      <!-- <div class="image-compare">
+                            <img src="./static/images/ts2_input.jpg" alt="" /></img>
+                            <img src="./static/images/ts_har.jpg" alt="" /></img>
+                        </div> -->
+         <td>
+                        <div class="image-compare" style="margin-top: 1em;">
+                            <center>
+          <img src="./static/images/port4.gif"  width=250>
+        </center>
+                        </div></th>
+           <td>
+                        <div class="image-compare" style="margin-top: 1em;">
+                            <center>
+          <img src="./static/images/port5.gif"  width=250>
+        </center>
+                        </div></th>
+        
+
+    </tr>
+
+      
+
+</table>
+ </div>
+      </div>
+    </div>
+     </div>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+     
+    <pre><code>TO DO</code></pre>
+  </div>
+</section>
+
+
+<section class="section" >
+  <div class="container is-max-desktop content">
+    <h5 class="title">Website Template taken from <span class="author-block">
+              <a href="https://nerfies.github.io/">Nerfies</a></h5>
+
+  </div>
+</section>
 
 </body>
 </html>
